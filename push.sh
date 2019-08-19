@@ -1,3 +1,4 @@
 #! /bin/bash 
-git push origin && git push githab && git push gitlab && echo "ok"
-
+git push origin && echo "bit" 
+git push githab && echo "githab"
+git push gitlab && echo "gitlab"
