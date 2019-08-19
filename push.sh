@@ -1,2 +1,3 @@
 #! /bin/bash 
-git fetch origin && git fetch githab && git fetch gitlab && echo "ok"
+git push origin && git push githab && git push gitlab && echo "ok"
+
