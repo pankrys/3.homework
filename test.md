@@ -5,11 +5,11 @@
 ------------------
 
 **Setup existing local user to run commands without password**
-```
-sudo visudo
+
+`sudo visudo
 
 pankrys ALL=(ALL) NOPASSWD:ALL
-```
+`
 **apt/yum upgrade**
 
 `ansible localhost -m shell -a 'apt update' -b `
