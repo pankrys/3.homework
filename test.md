@@ -5,17 +5,18 @@
 ------------------
 
 **Setup existing local user to run commands without password**
-
+```
 sudo visudo
-pankrys ALL=(ALL) NOPASSWD:ALL
 
+pankrys ALL=(ALL) NOPASSWD:ALL
+```
 **apt/yum upgrade**
 
-ansible localhost -m shell -a 'apt update' -b 
+`ansible localhost -m shell -a 'apt update' -b `
 
 **Run command for upgrade locally using ansible add-hoc commands**
 
-ansible localhost -m shell -a 'apt upgrade -y' -b 
+`ansible localhost -m shell -a 'apt upgrade -y' -b` 
 
 ## Connect to the remote host
 ----------------------
