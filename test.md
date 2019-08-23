@@ -1,4 +1,5 @@
-05. Ansible start
+# 05. Ansible start
+
 ==================
 
 ## Deploy Ansible on any your localhost (Ubuntu/CentOS)
@@ -21,7 +22,7 @@
 ## Connect to the remote host
 ----------------------
 
-### Using Vagrant deploy two host 
+**Using Vagrant deploy two host** 
 
 ```yml
 all_hosts:
@@ -37,7 +38,7 @@ all_hosts:
                                         ansible_host: 192.168.113.101
 
 ```
-### Setup hosts for connection without password
+**Setup hosts for connection without password**
 
 ```ruby
 
@@ -46,9 +47,9 @@ ssh_pub_key = File.readlines("#{Dir.home}/.ssh/id_rsa.pub").first.strip
        config.vm.provision 'shell', inline: "echo #{ssh_pub_key} >> /root/.ssh/authorized_keys"
        config.vm.provision 'shell', inline: "echo #{ssh_pub_key} >> /home/vagrant/.ssh/authorized_keys", privileged: false
 ```
-### Allow ansible user upgrade system:
+**Allow ansible user upgrade system:**
 
-* ansible ubu1 -m shell -a 'useradd -G sudo test ' -b
-* ansible centos -m shell -a 'useradd -G wheel test ' -b  
+`ansible ubu1 -m shell -a 'useradd -G sudo test ' -b`
+`ansible centos -m shell -a 'useradd -G wheel test ' -b`  
 
 
