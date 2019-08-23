@@ -5,24 +5,24 @@
 ## Deploy Ansible on any your localhost (Ubuntu/CentOS)
 ------------------
 
-**Setup existing local user to run commands without password**
+**Setup existing local user to run commands without password:**
 
 `sudo visudo`
 
 `pankrys ALL=(ALL) NOPASSWD:ALL`
 
-**apt/yum upgrade**
+**apt/yum upgrade:**
 
 `ansible localhost -m shell -a 'apt update' -b `
 
-**Run command for upgrade locally using ansible add-hoc commands**
+**Run command for upgrade locally using ansible add-hoc commands:**
 
 `ansible localhost -m shell -a 'apt upgrade -y' -b` 
 
 ## Connect to the remote host
 ----------------------
 
-**Using Vagrant deploy two host** 
+**Using Vagrant deploy two host:** 
 
 ```yml
 all_hosts:
@@ -38,7 +38,7 @@ all_hosts:
                                         ansible_host: 192.168.113.101
 
 ```
-**Setup hosts for connection without password**
+**Setup hosts for connection without password:**
 
 ```ruby
 
@@ -50,6 +50,7 @@ ssh_pub_key = File.readlines("#{Dir.home}/.ssh/id_rsa.pub").first.strip
 **Allow ansible user upgrade system:**
 
 `ansible ubu1 -m shell -a 'useradd -G sudo test ' -b`
+
 `ansible centos -m shell -a 'useradd -G wheel test ' -b`  
 
 
